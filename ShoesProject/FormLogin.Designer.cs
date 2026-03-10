@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             pbLogo = new PictureBox();
             pnMain = new Panel();
-            lblogin = new Label();
-            txtlogin = new TextBox();
-            txtPassword = new TextBox();
-            lbPassword = new Label();
-            btnLogin = new Button();
             btnGuest = new Button();
+            btnLogin = new Button();
+            lbPassword = new Label();
+            txtPassword = new TextBox();
+            txtlogin = new TextBox();
+            lblogin = new Label();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             pnMain.SuspendLayout();
             SuspendLayout();
@@ -66,39 +66,19 @@
             pnMain.Size = new Size(322, 220);
             pnMain.TabIndex = 1;
             // 
-            // lblogin
+            // btnGuest
             // 
-            lblogin.AutoSize = true;
-            lblogin.Location = new Point(135, 5);
-            lblogin.Name = "lblogin";
-            lblogin.Size = new Size(52, 19);
-            lblogin.TabIndex = 0;
-            lblogin.Text = "Логин";
-            // 
-            // txtlogin
-            // 
-            txtlogin.Location = new Point(36, 36);
-            txtlogin.Name = "txtlogin";
-            txtlogin.Size = new Size(250, 26);
-            txtlogin.TabIndex = 1;
-            txtlogin.UseSystemPasswordChar = true;
-            // 
-            // txtPassword
-            // 
-            txtPassword.Location = new Point(36, 105);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(250, 26);
-            txtPassword.TabIndex = 2;
-            txtPassword.UseSystemPasswordChar = true;
-            // 
-            // lbPassword
-            // 
-            lbPassword.AutoSize = true;
-            lbPassword.Location = new Point(132, 74);
-            lbPassword.Name = "lbPassword";
-            lbPassword.Size = new Size(58, 19);
-            lbPassword.TabIndex = 3;
-            lbPassword.Text = "Пароль";
+            btnGuest.BackColor = Color.Chartreuse;
+            btnGuest.BackgroundImageLayout = ImageLayout.Center;
+            btnGuest.FlatAppearance.BorderSize = 0;
+            btnGuest.FlatStyle = FlatStyle.Flat;
+            btnGuest.Location = new Point(86, 185);
+            btnGuest.Name = "btnGuest";
+            btnGuest.Size = new Size(150, 30);
+            btnGuest.TabIndex = 5;
+            btnGuest.Text = "Войти как гость";
+            btnGuest.UseVisualStyleBackColor = false;
+            btnGuest.Click += BtnGuest_Click;
             // 
             // btnLogin
             // 
@@ -112,19 +92,41 @@
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Войти";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += BtnLogin_Click;
             // 
-            // btnGuest
+            // lbPassword
             // 
-            btnGuest.BackColor = Color.Chartreuse;
-            btnGuest.BackgroundImageLayout = ImageLayout.Center;
-            btnGuest.FlatAppearance.BorderSize = 0;
-            btnGuest.FlatStyle = FlatStyle.Flat;
-            btnGuest.Location = new Point(86, 185);
-            btnGuest.Name = "btnGuest";
-            btnGuest.Size = new Size(150, 30);
-            btnGuest.TabIndex = 5;
-            btnGuest.Text = "Войти как гость";
-            btnGuest.UseVisualStyleBackColor = false;
+            lbPassword.AutoSize = true;
+            lbPassword.Location = new Point(132, 74);
+            lbPassword.Name = "lbPassword";
+            lbPassword.Size = new Size(58, 19);
+            lbPassword.TabIndex = 3;
+            lbPassword.Text = "Пароль";
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(36, 105);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(250, 26);
+            txtPassword.TabIndex = 2;
+            txtPassword.UseSystemPasswordChar = true;
+            // 
+            // txtlogin
+            // 
+            txtlogin.Location = new Point(36, 36);
+            txtlogin.Name = "txtlogin";
+            txtlogin.Size = new Size(250, 26);
+            txtlogin.TabIndex = 1;
+            txtlogin.UseSystemPasswordChar = true;
+            // 
+            // lblogin
+            // 
+            lblogin.AutoSize = true;
+            lblogin.Location = new Point(135, 5);
+            lblogin.Name = "lblogin";
+            lblogin.Size = new Size(52, 19);
+            lblogin.TabIndex = 0;
+            lblogin.Text = "Логин";
             // 
             // FormLogin
             // 
@@ -136,7 +138,7 @@
             Controls.Add(pbLogo);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormLogin";
