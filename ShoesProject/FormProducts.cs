@@ -24,14 +24,14 @@ namespace ShoesProject
             colInfo.FillWeight = 60;
             colInfo.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-            var colDiscoint = new DataGridViewTextBoxColumn();
-            colDiscoint.Name = "colDiscoint";
-            colDiscoint.FillWeight = 10;
-            colDiscoint.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            var colDiscount = new DataGridViewTextBoxColumn();
+            colDiscount.Name = "colDiscount";
+            colDiscount.FillWeight = 10;
+            colDiscount.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvProducts.Columns.AddRange(
             [
-                colPhoto,colInfo,colDiscoint
+                colPhoto,colInfo,colDiscount
             ]);
 
             CurrentUser = user;
@@ -53,6 +53,7 @@ namespace ShoesProject
                         .Include(i => i.Manufacturer)
                         .Include(i => i.Supplier)
                         .Include(i => i.Measure)
+                        .Include(i => i.ProductType)
                         .ToList();
 
                     dgvProducts.SuspendLayout();
@@ -73,6 +74,9 @@ namespace ShoesProject
                         ApplyRowsStyles(row, product);
 
                     }
+
+                    dgvProducts.ResumeLayout();
+                    dgvProducts.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
                 }
             }
             catch (Exception ex)
