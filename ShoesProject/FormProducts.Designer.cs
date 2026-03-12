@@ -29,35 +29,13 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            panelTop = new Panel();
-            lblUserName = new Label();
             btnLogut = new Button();
+            lblUserName = new Label();
+            panelTop = new Panel();
             dgvProducts = new DataGridView();
             panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             SuspendLayout();
-            // 
-            // panelTop
-            // 
-            panelTop.Controls.Add(lblUserName);
-            panelTop.Controls.Add(btnLogut);
-            panelTop.Dock = DockStyle.Top;
-            panelTop.Location = new Point(10, 10);
-            panelTop.Name = "panelTop";
-            panelTop.Padding = new Padding(0, 0, 0, 10);
-            panelTop.Size = new Size(964, 40);
-            panelTop.TabIndex = 0;
-            // 
-            // lblUserName
-            // 
-            lblUserName.AutoSize = true;
-            lblUserName.Dock = DockStyle.Right;
-            lblUserName.Location = new Point(769, 0);
-            lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(45, 19);
-            lblUserName.TabIndex = 6;
-            lblUserName.Text = "label1";
-            lblUserName.TextAlign = ContentAlignment.MiddleRight;
             // 
             // btnLogut
             // 
@@ -73,6 +51,28 @@
             btnLogut.Text = "Выход";
             btnLogut.UseVisualStyleBackColor = false;
             btnLogut.Click += BtnLogut_Click;
+            // 
+            // lblUserName
+            // 
+            lblUserName.AutoSize = true;
+            lblUserName.Dock = DockStyle.Right;
+            lblUserName.Location = new Point(769, 0);
+            lblUserName.Name = "lblUserName";
+            lblUserName.Size = new Size(45, 19);
+            lblUserName.TabIndex = 6;
+            lblUserName.Text = "label1";
+            lblUserName.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // panelTop
+            // 
+            panelTop.Controls.Add(lblUserName);
+            panelTop.Controls.Add(btnLogut);
+            panelTop.Dock = DockStyle.Top;
+            panelTop.Location = new Point(10, 10);
+            panelTop.Name = "panelTop";
+            panelTop.Padding = new Padding(0, 0, 0, 10);
+            panelTop.Size = new Size(964, 40);
+            panelTop.TabIndex = 0;
             // 
             // dgvProducts
             // 
@@ -124,9 +124,9 @@
 
         #endregion
 
-        private Panel panelTop;
-        private DataGridView dgvProducts;
         private Button btnLogut;
         private Label lblUserName;
+        private Panel panelTop;
+        private DataGridView dgvProducts;
     }
 }
