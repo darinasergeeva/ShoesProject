@@ -173,7 +173,7 @@ public partial class ShopDbContext : DbContext
             entity.Property(e => e.IdProduct).HasColumnName("id_product");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
 
-            entity.HasOne(d => d.IdOrderNavigation).WithMany(p => p.ProductsOrders)
+            entity.HasOne(d => d.Order).WithMany(p => p.ProductsOrders)
                 .HasForeignKey(d => d.IdOrder)
                 .HasConstraintName("products_orders_id_order_fkey");
 
