@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvOrders = new DataGridView();
             panelTop = new Panel();
             lblUserName = new Label();
@@ -47,14 +47,14 @@
             dgvOrders.BorderStyle = BorderStyle.None;
             dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOrders.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvOrders.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvOrders.DefaultCellStyle = dataGridViewCellStyle1;
             dgvOrders.Dock = DockStyle.Fill;
             dgvOrders.Location = new Point(0, 51);
             dgvOrders.Margin = new Padding(4);
@@ -105,6 +105,7 @@
             btnLogut.TabIndex = 5;
             btnLogut.Text = "Выход";
             btnLogut.UseVisualStyleBackColor = false;
+            btnLogut.Click += BtnLogut_Click;
             // 
             // FormOrders
             // 
@@ -117,7 +118,6 @@
             Margin = new Padding(4);
             Name = "FormOrders";
             Text = "Список заказов";
-            Load += FormOrders_Load;
             ((System.ComponentModel.ISupportInitialize)dgvOrders).EndInit();
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();

@@ -7,29 +7,48 @@ namespace ShoesProject
         {
             bool exitProgram = false;
 
-            while (!exitProgram) {
-                using (var formLogin = new FormLogin()) {
-                    if (formLogin.ShowDialog() == DialogResult.OK) {
+            while (!exitProgram)
+            {
+                using (var formLogin = new FormLogin())
+                {
+                    if (formLogin.ShowDialog() == DialogResult.OK)
+                    {
                         using (var formProducts = new FormProducts(
                             formLogin.CurrentUser,
                             formLogin.IsGuest))
                         {
-                            if (formProducts.ShowDialog() == DialogResult.Cancel)
+                            var productsResult = formProducts.ShowDialog();
+
+                            if (productsResult == DialogResult.OK || productsResult == DialogResult.Cancel)
                             {
-                                continue;
+                                using (var formOrders = new FormOrders(
+                                    formLogin.CurrentUser,
+                                    formLogin.IsGuest))
+                                {
+                                    var ordersResult = formOrders.ShowDialog();
+
+                                    if (ordersResult == DialogResult.Cancel)
+                                    {
+                                        continue; 
+                                    }
+                                    else
+                                    {
+                                        exitProgram = true; 
+                                    }
+                                }
                             }
                             else
                             {
                                 exitProgram = true;
                             }
                         }
-                        }
-                        else {
-                            exitProgram = true;
-                        }
+                    }
+                    else
+                    {
+                        exitProgram = true; 
                     }
                 }
-                            
-                        }
+            }
+        }
     }
 }
